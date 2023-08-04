@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    {{$keyemail}}
+    <p>Xin chao {{$user['email']}}</p>
+    <a href="{{route('logout')}}">Logout</a>
 </body>
 </html>

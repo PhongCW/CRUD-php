@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach($model as $item)
+    @foreach($key as $item)
         <ul>
             <li>{{$item['email']}}</li>
-            <li><a href="Update/{{$item['id']}}">Update</a></li>
-            <li><a href="{{$item['id']}}">Delete</a></li>
+            <li><a href="{{route('update', [$item['id']])}}">Update</a></li>
+            <li><a href="{{route('delete', [$item['id']])}}">Delete</a></li>
         </ul>
     @endforeach
 </body>

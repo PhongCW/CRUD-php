@@ -128,11 +128,12 @@ input::-moz-focus-inner {
   border: 0; 
 }
 #submit {
-  color: #707075;
+  color: white;
   margin-top: 40px;
   transition: color 300ms;
   border-radius: 10px 10px 10px 10px;
-  color: white;
+  background-color: gray;
+  box-shadow: 1px 10px 10px 1px rgba(255,100, 30,0.22);
 }
 #submit:focus {
   color: #f2f2f2;
@@ -142,7 +143,8 @@ input::-moz-focus-inner {
 }
 #submit:hover{
     background-color: lightslategray;
-    color: black;
+    color: white;
+    box-shadow: 1px 10px 10px 1px rgba(0,0,0,0.22);
 }
 
     </style>
@@ -177,13 +179,13 @@ input::-moz-focus-inner {
         </defs>
         <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
       </svg>
-      <form action="login" method="POST">
+      <form action="{{route('signup')}}" method="POST">
         @csrf
         <div class="form">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" placeholder="Enter Email">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" placeholder="Enter Password">
             <input type="submit" id="submit" value="Submit">
         </div>
         </form>

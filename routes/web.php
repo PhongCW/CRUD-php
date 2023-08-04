@@ -18,12 +18,18 @@ Route::get('/', function () {
 });
 Route::get('wl', 'App\Http\Controllers\MyController@welcome')->name('first');
 
-Route::post('login', 'App\Http\Controllers\MyController@Login')->name('login');
+Route::post('signup', 'App\Http\Controllers\MyController@SignUp')->name('signup');
 
-Route::get('showAll', 'App\Http\Controllers\MyController@ShowAll')->name('show');
+Route::get('show', 'App\Http\Controllers\MyController@Show')->name('show');
 
-Route::get('{id}', 'App\Http\Controllers\MyController@getID')->name('getID');
+Route::get('delete/{id}', 'App\Http\Controllers\MyController@Delete')->name('delete');
 
-Route::get('Update/{id}', 'App\Http\Controllers\MyController@Update')->name('getUpdate');
+Route::get('update/{id}','App\Http\Controllers\MyController@Update')->name('update');
 
-Route::post('upda', 'App\Http\Controllers\MyController@PostUpdate')->name('upda');
+Route::post('getUpdate/{id}', 'App\Http\Controllers\MyController@getUpdate')->name('getUpdate');
+
+Route::get('login', 'App\Http\Controllers\MyController@Login')->name('login');
+
+Route::post('LoginToUser', 'App\Http\Controllers\MyController@LoginToUser')->name('LoginToUser');
+
+Route::get('logout', 'App\Http\Controllers\MyController@Logout')->name('logout');
