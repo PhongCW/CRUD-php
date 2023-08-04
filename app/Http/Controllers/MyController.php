@@ -8,6 +8,7 @@ use App\Models\MyModel;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class MyController extends Controller
 {
@@ -57,6 +58,10 @@ class MyController extends Controller
         $email = $request->email;
         $password = $request->password;
 
+        $request->validate([
+            'email'=>'required|unique|max:255',
+            'password'=>'required|min:6|max:255'
+        ]);
         $remember = $request->has('remember') ? true : false;
         $user = new User;
         $user = User::where(['email'=>$email], $remember)->first();

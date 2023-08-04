@@ -128,7 +128,13 @@ body {
     <p><input type="email" placeholder="Email" name="email"></p>
     <p><input type="password" placeholder="Password" name="password"></p>
     <p><input type="submit" value="Log in"></p>
+    <ul class='alert text-danger'>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li> 
+    @endforeach
+  </ul>
   </form>
+  
 </div>
 </body>
 </html>
